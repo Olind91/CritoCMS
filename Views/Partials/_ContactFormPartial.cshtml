@@ -1,0 +1,70 @@
+﻿@using oskarCMS.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    
+
+    var contactForm = new ContactForm();
+}
+
+<!--Form-->
+
+<section class="form-page">
+    <div class="contact-boxes container">
+        <div class="box">
+            <div class="circle">
+                <i class="fa-sharp fa-regular fa-location-dot" style="color: #ffffff;"></i>
+            </div>
+
+            <div class="details">
+                <p><b>Visit Us</b></p>
+                <p>Sveavägen 31, <br>111 34 Stockholm</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="circle">
+                <i class="fa-solid fa-phone" style="color: #ffffff;"></i>
+            </div>
+
+            <div class="details">
+                <p><b>Call Us</b></p>
+                <p>+46 (8) 424 25 64 <br>+46 (8) 424 25 42</p>
+            </div>
+
+        </div>
+
+        <div class="box">
+            <div class="circle">
+                <i class="fa-sharp fa-regular fa-location-dot" style="color: #ffffff;"></i>
+            </div>
+
+            <div class="details">
+                <p><b>Email Us</b></p>
+                <p>info@crito.com <br>support@crito.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form">
+        <div class="container message-form">
+            @using (Html.BeginUmbracoForm("Index", "Contacts", FormMethod.Post))
+            {
+            
+                <div asp-validation-summary="All"></div>
+                <h1>Leave us a message for <br>any information</h1>               
+
+                <input asp-for="@contactForm.Name" type="text" placeholder="Name" class="input-field">
+                <input asp-for="@contactForm.Email" type="email" placeholder="Email" class="input-field">
+                <textarea asp-for="@contactForm.Message" placeholder="Your message" class="textarea-field"></textarea>
+
+                <button type="submit" class="theme-button">Send Message <i class="fa-light fa-arrow-up-right"></i></button>
+            }
+        </div>
+    </div>
+
+</section>
+
+<section class="map">
+    <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2038.9267260908177!2d15.232725599999998!3d59.267373199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465c14ff2f85aed1%3A0xf6c890d8b758d6f6!2sSveav%C3%A4gen%2031%2C%20702%2014%20%C3%96rebro!5e0!3m2!1ssv!2sse!4v1693468787180!5m2!1ssv!2sse" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>

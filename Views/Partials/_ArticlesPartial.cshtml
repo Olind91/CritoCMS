@@ -1,0 +1,69 @@
+﻿@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+<section class="articles">
+    <div class="container">
+        <p class="red-title">Article & News</p>
+        <div class="textandbutton-row">
+            <div class="big-titles"><h1>@Model.Value("articleTitle")</h1></div>
+            <div class="login-button">
+                <button class="white-button browse-articles">Browse Articles <i class="fa-light fa-arrow-up-right"></i></button>
+            </div>
+        </div>
+        
+
+       <!-- Grid Collection Start -->
+        <div class="grid-collection-regular">
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="gridbox-regular">
+                        <img src="./images/DigitalizationInClassroom.jpg">
+                        <div class="box-date"><h4>25</h4><h5>Mar</h5></div>
+                        <div class="box-content">
+                            <div class="box-ingress">Business</div>
+                            <div class="box-title">How To Use Digitalization In The Classroom</div>
+                            <div class="box-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Gridbox Regular -->
+                <div class="col-md-4">
+                    <div class="gridbox-regular">
+                        <img src="./images/chatGPT.jpg">
+                        <div class="box-date"><h4>17</h4><h5>Mar</h5></div>
+                        <div class="box-content">
+                            <div class="box-ingress">Business</div>
+                            <div class="box-title">How To Implement Chat GPT In Your Projects</div>
+                            <div class="box-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gridbox Regular end -->
+
+                <!-- Gridbox Regular -->
+                <div class="col-md-4">
+                    <div class="gridbox-regular">
+                        <img src="./images/CSSdesign.jpg">
+                        <div class="box-date"><h4>13</h4><h5>Mar</h5></div>
+                        <div class="box-content">
+                            <div class="box-ingress">Business</div>
+                            <div class="box-title">The Guide To Support Modern CSS Design</div>
+                            <div class="box-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gridbox Regular end -->
+
+                
+            </div>
+        </div>
+        <!-- Grid Collection end -->
+
+        
+
+    </div>
+</section>
+

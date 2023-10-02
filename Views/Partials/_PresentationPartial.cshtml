@@ -1,0 +1,82 @@
+﻿@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+<!-- Multi Pictures / Presentation Section-->
+<section class="presentation">
+    
+    
+    <div class="partners">
+        @{
+            var multiPicturesImages = Model.Value<IEnumerable<MediaWithCrops>>("multiPicturesImages");
+            foreach (var entry in multiPicturesImages)
+            {
+                <img src="@entry.MediaUrl()" alt="">
+            }
+        }
+    </div>
+
+    
+
+
+
+
+
+    <div class="features container">
+        <div class="title">
+            <p class="red-title">Features</p>
+            <h1>Our Accounting Is Trusted By Thousands Of Companies</h1>
+            <div class="theme-button">
+            <button class="login">Learn More <i class="fa-light fa-arrow-up-right"></i></button>
+            </div>
+        </div>
+
+        <grid class="content">
+            <div class="info-box">
+                <i class="fa-light fa-handshake"></i>              
+                <h3>Business Advice</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-regular fa-lightbulb-on"></i>               
+                <h3>Startup Business</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-solid fa-chart-mixed-up-circle-dollar"></i>  
+                <h3>Financial Advice</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+
+            <div class="info-box">
+                <i class="fa-sharp fa-light fa-box-circle-check"></i>                
+                <h3>Risk Management</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            </div>
+        </grid>
+    </div>
+
+    <div class="about container">
+        <div class="left">
+            <img src="./static/showcase-sliders/daria-pimkina-tYaccl19A3Q-unsplash.jpg" >
+            <div class="info-box">
+                <h3>Samantha Brown, <span style="color: var(--theme-color-red);">Founder</span></h3>
+                <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt atis eligendi."</p>
+            </div>
+        </div>
+
+        <div class="right">
+            <p class="red-title">About Company</p>
+            <h1>We Are Business Consulting & Credit Repair Experts</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nemo eum perspiciatis hic excepturi sit id repudiandae, officia reiciendis modi error esse, repellat maxime, ex aperiam minima suscipit? <br><br>Reprehenderit delectus totam quod repudiandae! Molestias, quidem sint? Sunt recusandae a tenetur illum quia voluptatibus excepturi harum soluta, perspiciatis eligendi, culpa ipsum.</p>
+
+            <div class="buttons">
+                <button class="black-button">Learn More <i class="fa-light fa-arrow-up-right"></i></button>
+                <button class="white-button"><i class="fa-solid fa-play"></i></button>
+                <p>Intro Video</p>  
+            </div>
+        </div>
+    </div>
+</section>

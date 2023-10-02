@@ -1,0 +1,61 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsAndArticles>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.PublishedContent;
+
+
+@{
+	Layout = "_Layout.cshtml";
+	ViewData["PageTitle"] = @Model.Value("pageTitle");
+	ViewData["PageDescription"] = @Model.Value("pageDescription");
+	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+}
+
+
+@await Html.PartialAsync("_BreadcrumbPartial")
+
+
+<section class="articles">
+        <div class="container">
+            
+            <div class="textandbutton-row">
+                <div class="big-titles"><h1>Our News & Articles</h1></div>
+                <div class="login-button">
+                    <button class="white-button browse-articles">Browse Articles <i class="fa-light fa-arrow-up-right"></i></button>
+                </div>
+            </div>
+        
+            @{
+        	    var selection = Umbraco?.Content(Guid.Parse("50d0e534-c3f1-4249-b525-cf36b8ef959f"))?
+                .ChildrenOfType("newsItem")?
+                .Where(x => x.IsVisible())
+                .OrderByDescending(x => x.CreateDate).ToList();
+            }
+       
+        @if(selection != null)
+        {
+        
+            @foreach (var item in selection)
+            {
+                
+                var date = item.CreateDate;
+                var image = item.Value<IPublishedContent>("newsItemImage");
+                var category = item.Value("newsItemCategory");
+                var title = item.Name();
+                var ingress = item.Value("newsItemIngress");
+
+                <a href="/very-static-html" class="gridbox-regular">
+                    <img src="@image?.Url()">
+                    <div class="box-date"><h4>@date.ToString("dd")</h4><h5>@date.ToString("MMM")</h5></div>
+                    <div class="box-content">
+                        <div class="box-ingress">@category</div>
+                        <div class="box-title">@title</div>
+                        <div class="box-text">@ingress</div>
+                    </div>
+                </a>
+            }
+        }
+       
+        </div>
+    </section>
+@await Html.PartialAsync("_SignUpPartial")

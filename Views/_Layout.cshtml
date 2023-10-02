@@ -1,0 +1,39 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Forms.Web
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+	
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="@ViewData["PageDescription"]?.ToString()">
+        <meta name="keywords" content="@ViewData["PageKeywords"]?.ToString()">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/41c8b474e2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        @Html.RenderUmbracoFormDependencies()
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <title>@ViewData["PageTitle"]?.ToString() | Crito</title>
+    </head>
+    
+    
+    <body>
+    @await Html.PartialAsync("_NavbarPartial")
+    @RenderBody()
+    @await Html.PartialAsync("_BottomInfoPartial")
+    @await Html.PartialAsync("_FooterPartial")
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./scripts/script.js"></script>
+    </body>
+</html>
+
+
